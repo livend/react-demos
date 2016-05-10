@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>first react</title>
+	<title>react class</title>
 </head>
 <body>
-<div id="first" class="first"></div>
+<div id="first"></div>
 <script src="../build/react.js"></script>
 <script src="../build/react-dom.js"></script>
 <script src="../build/browser.min.js"></script>
 <script type="text/babel">
+	var HelloReact = React.createClass({
+		render:function(){
+			return <h1>Hello {this.props.name}</h1>;
+		}
+	});
+
 	ReactDOM.render(
-		<div>hello react</div>,
-		document.getElementsByClassName("first")[0]
+		<HelloReact name="react"/>,
+		document.getElementById("first")
 	);
 </script>
 </body>

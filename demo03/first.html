@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>first react</title>
+	<title>react array II</title>
 </head>
 <body>
-<div id="first" class="first"></div>
+<div id="first"></div>
 <script src="../build/react.js"></script>
 <script src="../build/react-dom.js"></script>
 <script src="../build/browser.min.js"></script>
 <script type="text/babel">
+	var arrs = [
+		<div>Hello World</div>,
+		<div>hello react</div>
+	];
 	ReactDOM.render(
-		<div>hello react</div>,
-		document.getElementsByClassName("first")[0]
+		<div>{arrs}</div>,
+		document.getElementById("first")
 	);
 </script>
 </body>
