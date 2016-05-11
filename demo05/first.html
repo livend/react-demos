@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react children</title>
+</head>
+<body>
+<div id="first"></div>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+<script type="text/babel">
+
+   var SpanList = React.createClass({
+    render: function() {
+      return (
+        <ol>
+          {
+            React.Children.map(this.props.children, function (child) {
+              return <li>{child}</li>
+            })
+          }
+        </ol>
+      )
+    }
+  });
+
+	ReactDOM.render(
+		<SpanList>
+			<span>live</span>
+			<span>script</span>
+		</SpanList>,
+		document.getElementById("first")
+	);
+</script>
+</body>
+</html>

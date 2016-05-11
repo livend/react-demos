@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>react event</title>
+</head>
+<body>
+<div id="first"></div>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+<script type="text/babel">
+	var MyEvent = React.createClass({
+		handClick:function(){
+			alert(444);
+			this.refs.my_input.focus();
+		},
+		render:function(){
+			return (
+				<div>
+					<input type="text" ref="my_input"/>
+					<input type="button" value="focus the text input" onClick={this.handClick}/>
+					{/*<input type="button" value="focus the text input" onClick="{this.handClick}"/>
+					onClick ==> onclick 函数都不能打引号 */}
+				</div>
+			)
+		}
+	});
+
+	ReactDOM.render(
+		<MyEvent />,
+		document.getElementById("first")
+	);
+</script>
+</body>
+</html>
